@@ -1,0 +1,43 @@
+:root{
+    --main-bg-color: #E0DDCF;
+    --header-bg-color:#534B52;
+    --aside-bg-color: #F1F0EA;
+    --footer-bg-color:#2D232E;
+    --footer-bg-color-a: #474448;
+
+
+}
+*{
+    box-sizing: border-box;
+}
+body,html{
+    margin:0;
+    height: 100%;
+}
+body{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 0.5fr 3fr 2fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "main  aside"
+    "main aside"
+    "footer footer"
+    ;
+}
+main{
+    grid-area: main;
+    background-color: var(--main-bg-color);
+}
+aside{
+    grid-area: aside;
+    background-color: var(--aside-bg-color);
+}
+header{
+    grid-area: header;
+    background-color: var(--header-bg-color);
+}
+footer{
+    grid-area: footer;
+    background-color: var(--footer-bg-color);
+}
