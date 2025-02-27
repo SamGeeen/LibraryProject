@@ -4,13 +4,14 @@
     --aside-bg-color: #F1F0EA;
     --footer-bg-color:#2D232E;
     --footer-bg-color-a: #474448;
-
+    --font-main:Verdana, Geneva, Tahoma, sans-serif;
 
 }
 *{
     box-sizing: border-box;
 }
 body,html{
+  
     margin:0;
     height: 100%;
 }
@@ -58,3 +59,80 @@ header .logo span{
     font-size: 1.4rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem;
+
+}
+main .book-card{
+   
+    padding: 0.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    color: var(--footer-bg-color);
+    font-family: var(--font-main);
+    
+}
+main .book-card:hover {
+ 
+   text-decoration: underline;
+
+}
+main .book-card:first-of-type{
+    border-top: 3px solid var(--footer-bg-color-a);
+  
+}
+main .book-card:nth-of-type(even){
+    background-color: var(--footer-bg-color-a);
+    color: var(--main-bg-color);
+}
+
+main .book-card .book-title{
+    font-size: 1.3rem;
+    flex: 2;
+    text-decoration: none;
+    
+    transition: all 0.4s ;
+}
+main .book-card .book-author{
+    flex: 1;
+}
+
+main .book-card .book-seen{
+    cursor: pointer;
+  
+}
+main .book-card .book-seen img{
+  
+    height:1.4rem
+}
+
+main .book-card:nth-of-type(even) .book-seen img{
+    filter: invert();
+}
+main .book-card .book-pages-count::after{
+    content: "pages";
+    font-size: 0.9rem;
+    font-style: italic;
+    padding-left: 0.4rem;
+}
+
+main .book-card .book-seen input{
+position: absolute;
+opacity: 0.0 ;
+cursor: pointer;
+}
+.img-wrapper{
+    opacity: 1;
+}
+main .book-card .book-seen input:checked + .img-wrapper{
+    border-bottom: 12px solid rgb(114, 109, 109);
+    
+}
+
