@@ -75,23 +75,20 @@ main .book-card{
     justify-content: center;
     gap: 1rem;
 
+    border-left: 10px solid rgba(71, 67, 67,0.5);
+    border-bottom: 4px solid var(--footer-bg-color-a);
     color: var(--footer-bg-color);
     font-family: var(--font-main);
     
 }
-main .book-card:hover {
- 
-   text-decoration: underline;
-
+main .book-card:hover{
+    border-left: 10px solid rgba(71, 67, 67,1);
 }
 main .book-card:first-of-type{
     border-top: 3px solid var(--footer-bg-color-a);
   
 }
-main .book-card:nth-of-type(even){
-    background-color: var(--footer-bg-color-a);
-    color: var(--main-bg-color);
-}
+
 
 main .book-card .book-title{
     font-size: 1.3rem;
@@ -151,4 +148,10 @@ main .book-card  .remove-book-button{
     cursor: pointer;
     border: 1px solid black;
     font-size: 1rem;
+}
+.card-template{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    background-color: red;
 }

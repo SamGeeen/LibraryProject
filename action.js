@@ -19,6 +19,36 @@ function addBook(title,author,pagesCount){
 addBook("Pride and Prejudice","Jane Austen",242)
 addBook("One hundered years of solitude","Gabriel Garcia Marquez",233)
 
-console.dir(booksList)
+
 
 //Presentation Layer
+const container = document.querySelector(".books-cards-wrapper")
+ 
+function addBookCard(book){
+   
+    addBook(book.title,book.author,book.pagesCount)
+    
+    const template = document.querySelector(".card-template")
+    
+    const node = document.importNode(template,true)
+
+    node.classList.remove("card-template")
+    
+   // node.querySelector(".book-title").textContent =book.title
+   // node.querySelector(".book-author").textContent= book.author
+   // node.querySelector(".book-pages-count").textContent = book.pagesCount
+    
+    node.getElementsByClassName("book-title")[0].textContent = book.title
+    node.getElementsByClassName("book-author")[0].textContent = book.author
+    node.getElementsByClassName("book-pages-count")[0].textContent = book.pagesCount
+    
+
+    console.log(node.getElementsByClassName("book-title")[0])
+    container.appendChild(node)
+
+    }
+const tmpBook = new Book("War and Peace", "Leo Tolestoy",1225)
+
+addBookCard(tmpBook)
+
+ 
