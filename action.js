@@ -11,11 +11,14 @@ Book.prototype.readTheBook = function () {
     this.isRead = true
 }
 
+function addBook(title,author,pagesCount){
+    const newBook = new Book(title,author,pagesCount)
+    booksList.push(newBook)
+}
 
+addBook("Pride and Prejudice","Jane Austen",242)
+addBook("One hundered years of solitude","Gabriel Garcia Marquez",233)
 
-let book1 = new Book("Atomic habits","Richard Faynman",241)
-book1.readTheBook();
-booksList.push(book1)
 console.dir(booksList)
 
 //Presentation Layer
