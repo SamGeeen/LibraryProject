@@ -12,5 +12,10 @@ Book.prototype.readTheBook = function () {
 }
 
 
-book1 = new Book("Atomic habits","Richard Faynman",241)
+
+let book1 = new Book("Atomic habits","Richard Faynman",241)
+book1.readTheBook();
+booksList.push(book1)
+console.dir(booksList)
+
 //Presentation Layer
