@@ -24,9 +24,9 @@ addBook("One hundered years of solitude","Gabriel Garcia Marquez",233)
 //Presentation Layer
 const container = document.querySelector(".books-cards-wrapper")
  
-function addBookCard(book){
+function displayBookCard(book){
    
-    addBook(book.title,book.author,book.pagesCount)
+    //addBook(book.title,book.author,book.pagesCount)
     
     const template = document.querySelector(".card-template")
     
@@ -49,6 +49,6 @@ function addBookCard(book){
     }
 const tmpBook = new Book("War and Peace", "Leo Tolestoy",1225)
 
-addBookCard(tmpBook)
+displayBookCard(tmpBook)
 
  
