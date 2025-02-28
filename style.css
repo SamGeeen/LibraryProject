@@ -113,8 +113,9 @@ main .book-card .book-seen img{
     height:1.4rem
 }
 
-main .book-card:nth-of-type(even) .book-seen img{
-    filter: invert();
+main .book-card:nth-of-type(even) .book-seen .check-img{
+
+  
 }
 main .book-card .book-pages-count::after{
     content: "pages";
@@ -125,15 +126,22 @@ main .book-card .book-pages-count::after{
 
 main .book-card .book-seen input{
 position: absolute;
-opacity: 0.0 ;
+opacity:0 ;
 cursor: pointer;
 }
-.img-wrapper{
-    opacity: 1;
-}
-main .book-card .book-seen input:checked + .img-wrapper{
-    border-bottom: 12px solid rgb(114, 109, 109);
+
+main .book-card .book-seen .check-img{
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url(read-svgrepo-com.svg);
+    background-position: center;
+    background-size: cover;
     
+ 
+}
+main .book-card .book-seen input:checked + .check-img{
+    background-image: url(un-seen.svg);
+
 }
 
 main .book-card  .remove-book-button{
