@@ -47,6 +47,10 @@ function displayBookCard(book){
     container.appendChild(node)
 
     }
+    addBookCard(book){
+        addBook(book.title,book.author,book.pagesCount)
+        displayBookCard(book)
+    }
 const tmpBook = new Book("War and Peace", "Leo Tolestoy",1225)
 
 displayBookCard(tmpBook)
