@@ -155,3 +155,32 @@ main .book-card  .remove-book-button{
     height: 0;
     background-color: red;
 }
+aside .add-book-form{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    align-items: start;
+    flex-direction: column;
+    gap:0.52rem
+}
+#new-book-button{
+    margin-top: 1rem;
+    grid-column: 1 / 3;
+    justify-self: center;
+    padding: 0.4rem 1rem;
+    background-color: var(--footer-bg-color-a);
+    color: var(--main-bg-color);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 1px 1px 12px slategray;
+    transition: all 0.3s;
+
+}
+
+#new-book-button:hover{
+    opacity: 0.8;
+}
