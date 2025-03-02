@@ -47,12 +47,24 @@ function displayBookCard(book){
     container.appendChild(node)
 
     }
-    addBookCard(book){
+    function addBookCard(book){
         addBook(book.title,book.author,book.pagesCount)
         displayBookCard(book)
     }
-const tmpBook = new Book("War and Peace", "Leo Tolestoy",1225)
+    function newBook(event){
+        const title = document.querySelector("#title-text").value
+        const author = document.querySelector("#author-text").value
+        const pagesCount = document.querySelector("#pages-counter").value
+        
+        const tmpBook = new Book(title,author,pagesCount)
+        addBookCard(tmpBook)
+        event.preventDefault()
+        console.log(booksList) 
 
-displayBookCard(tmpBook)
+    }
+    const newBookButton = document.querySelector("#new-book-button")
+    newBookButton.addEventListener("click",newBook)
+
+    
 
  
