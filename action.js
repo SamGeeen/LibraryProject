@@ -18,6 +18,8 @@ function addBook(title,author,pagesCount){
 
 addBook("Pride and Prejudice","Jane Austen",242)
 addBook("One hundered years of solitude","Gabriel Garcia Marquez",233)
+addBook("War and Peace","Leo Tolstoy",1225)
+addBook("The Lord of the Rings","J.R.R. Tolkien",1178)
 
 
 
@@ -65,6 +67,11 @@ function displayBookCard(book){
     const newBookButton = document.querySelector("#new-book-button")
     newBookButton.addEventListener("click",newBook)
 
-    
+   function  displayAllBooks(){
+        booksList.forEach(function (book){
+            displayBookCard(book)
+        })
+    }
+    displayAllBooks()
 
  
