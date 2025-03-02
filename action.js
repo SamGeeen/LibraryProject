@@ -13,9 +13,14 @@ Book.prototype.readTheBook = function () {
 
 function addBook(title,author,pagesCount){
     const newBook = new Book(title,author,pagesCount)
+    newBook.bookId = booksList[booksList.length -1] == undefined ? 1 : booksList[booksList.length -1].bookId +1
     booksList.push(newBook)
 }
 
+function removeBook(bookId){
+    const index = booksList.findIndex((book)=>book.bookId === bookId)
+    booksList.splice(index,1)
+}
 addBook("Pride and Prejudice","Jane Austen",242)
 addBook("One hundered years of solitude","Gabriel Garcia Marquez",233)
 addBook("War and Peace","Leo Tolstoy",1225)
@@ -44,8 +49,12 @@ function displayBookCard(book){
     node.getElementsByClassName("book-author")[0].textContent = book.author
     node.getElementsByClassName("book-pages-count")[0].textContent = book.pagesCount
     
+    node.setAttribute("bookId",book.bookId)
 
-    console.log(node.getElementsByClassName("book-title")[0])
+    node.getElementsByClassName("remove-book-button")[0].addEventListener("click",
+        removeBookCard)
+    
+
     container.appendChild(node)
 
     }
@@ -61,7 +70,7 @@ function displayBookCard(book){
         const tmpBook = new Book(title,author,pagesCount)
         addBookCard(tmpBook)
         event.preventDefault()
-        console.log(booksList) 
+      
 
     }
     const newBookButton = document.querySelector("#new-book-button")
@@ -72,6 +81,17 @@ function displayBookCard(book){
             displayBookCard(book)
         })
     }
+    function removeBookCard(event){
+        
+        const book_id = +event.target.parentElement.getAttribute("bookId")
+        removeBook(book_id)
+        
+        event.target.parentElement.remove()
+    }
+    document.querySelector("#remove-book-button").addEventListener
+    ("click",removeBookCard)
     displayAllBooks()
+    
+
 
  

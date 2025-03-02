@@ -110,10 +110,7 @@ main .book-card .book-seen img{
     height:1.4rem
 }
 
-main .book-card:nth-of-type(even) .book-seen .check-img{
 
-  
-}
 main .book-card .book-pages-count::after{
     content: "pages";
     font-size: 0.9rem;
